@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: python-vvnopbrh-gitops
+  description: This is GitOps manifest for python-vvnopbrh   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=python-vvnopbrh
+    backstage.io/kubernetes-id: python-vvnopbrh 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: python-vvnopbrh
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:python-vvnopbrh
